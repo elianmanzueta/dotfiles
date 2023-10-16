@@ -1,0 +1,54 @@
+#!/bin/bash
+
+CONFIG_DIR="$HOME/dotfiles"
+ZSHRC="$CONFIG_DIR/.zshrc"
+BASHRC="$CONFIG_DIR/.bashrc"
+NVIM="$HOME/.config/nvim"
+
+if [ "$OSTYPE" = "linux-gnu" ]; then
+	sudo apt-get install curl
+fi
+
+# Clone neovim repo
+echo "\nCloning neovim repository..."
+mkdir $HOME/.config/.nvim
+git clone https://github.com/elianmanzueta/nvim $NVIM
+
+# Install Oh My Zsh!
+echo "\nInstalling Oh My Zsh..."
+cp -r "$CONFIG_DIR/config/.oh-my-zsh" "$HOME/.oh-my-zsh"
+
+# Configure symlinks
+echo "\nConfiguring symlinks..."
+ln -fs $ZSHRC $HOME/.zshrc
+ln -fs $BASHRC $HOME/.bashrc
+
+# Configure gitconfig
+echo "\nConfiguring gitconfig..."
+git config --global user.name "Elian Manzueta"
+git config --global user.email "eliandmanzueta@gmail.com"
+git config --global color.ui auto
+
+# Install Homebrew
+echo "\nInstalling Homebrew..."
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+# Installing stuff
+echo "\nInstalling packages..."
+brew install neovim
+brew install aichat
+
+if [ "$OSTYPE" = "linux-gnu" ]; then
+	sudo apt-get install wget snmp snmpd snmp-mibs-downloader fail2ban cmatrix unzip libfuse2 ninja-build gettext cmake zsh xclip
+elif [ "$OSTYPE" = "darwin"* ]; then
+	brew install zsh
+	brew install curl
+	brew install xclip
+	brew install tmux
+fi
+
+# Add ZSH to /etc/shells
+echo "\nAdding ZSH to allowed shells..."
+command -v zsh | sudo tee -a /etc/shells
+
+echo "Run chsh to change shell to ZSH"
