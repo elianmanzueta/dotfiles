@@ -14,10 +14,6 @@ echo "\nCloning neovim repository..."
 mkdir $HOME/.config/.nvim
 git clone https://github.com/elianmanzueta/nvim $NVIM
 
-# Install Oh My Zsh!
-echo "\nInstalling Oh My Zsh..."
-cp -r "$CONFIG_DIR/config/.oh-my-zsh" "$HOME/.oh-my-zsh"
-
 # Configure symlinks
 echo "\nConfiguring symlinks..."
 ln -fs $ZSHRC $HOME/.zshrc
