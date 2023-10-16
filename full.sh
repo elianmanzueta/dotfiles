@@ -1,13 +1,19 @@
-#!/bin/bash
-
 CONFIG_DIR="$HOME/dotfiles"
-ZSHRC="$CONFIG_DIR/.zshrc"
-BASHRC="$CONFIG_DIR/.bashrc"
-NVIM="$HOME/.config/nvim"
+ZSHRC="$CONFIG_DIR/.zsh/.zshrc"
+ZSH_THEME="$CONFIG_DIR/.zsh/themes"
+BASHRC="$CONFID_DIR/.bashrc"
 
 if [ "$OSTYPE" = "linux-gnu" ]; then
+	sudo apt-get update
+	sudo apt-get upgrade
 	sudo apt-get install curl
 fi
+
+# Install Oh My Zsh!
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Create symbolic link for Headline Oh My Zsh! Theme
+ln -s $ZSH_CUSTOM/themes/headline/headline.zsh-theme $ZSH_CUSTOM/themes/headline.zsh-theme
 
 # Clone neovim repo
 echo "\nCloning neovim repository..."
