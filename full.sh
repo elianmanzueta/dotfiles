@@ -13,7 +13,7 @@ fi
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Create symbolic link for Headline Oh My Zsh! Theme
-ln -s $ZSH_CUSTOM/themes/headline/headline.zsh-theme $ZSH_CUSTOM/themes/headline.zsh-theme
+ln -s $ZSH_THEME/headline.zsh-theme $ZSH_CUSTOM/themes/headline.zsh-theme
 
 # Clone neovim repo
 echo "\nCloning neovim repository..."
