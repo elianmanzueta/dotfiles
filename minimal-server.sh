@@ -26,7 +26,7 @@ ln -fs $VIMRC $HOME/.vimrc
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Create symbolic link for Headline Oh My Zsh! Theme
-ln -s $ZSH_THEME/headline.zsh-theme $ZSH_CUSTOM/themes/headline.zsh-theme
+ln -s $ZSH_THEME/headline.zsh-theme ~/.oh-my-zsh/custom/themes/headline.zsh-theme
 
 # Add ZSH to /etc/shells
 echo "\nAdding ZSH to allowed shells..."
