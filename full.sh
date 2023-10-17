@@ -15,6 +15,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # Create symbolic link for Headline Oh My Zsh! Theme
 ln -s $ZSH_THEME/headline.zsh-theme ~/.oh-my-zsh/custom/themes/headline.zsh-theme
 
+# Instll ZSH Plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions             # Autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting # Syntax Highlighting
+
 # Clone neovim repo
 echo "\nCloning neovim repository..."
 mkdir $HOME/.config/.nvim
