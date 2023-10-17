@@ -155,7 +155,7 @@ HEADLINE_PROMPT='%(#.#.%(!.!.$)) ' # consider "%#"
 HEADLINE_RPROMPT=''
 
 # Clock (prepends to RPROMPT)
-HEADLINE_DO_CLOCK=false # whether to show the clock
+HEADLINE_DO_CLOCK=true # whether to show the clock
 HEADLINE_STYLE_CLOCK=$faint
 HEADLINE_CLOCK_FORMAT='%l:%M:%S %p' # consider "%+" for full date (see man strftime)
 
