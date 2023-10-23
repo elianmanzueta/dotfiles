@@ -35,14 +35,19 @@ git config --global user.name "Elian Manzueta"
 git config --global user.email "eliandmanzueta@gmail.com"
 git config --global color.ui auto
 
-# Install Homebrew
-echo "\nInstalling Homebrew..."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# Prompt user for confirmation
+read -p "Install Homebrew? (y\n) "
 
-# Installing stuff
-echo "\nInstalling packages..."
-brew install neovim
-brew install aichat
+if [[ "$confirmation" == [yY]* ]]; then
+	# Install Homebrew
+	echo "\nInstalling Homebrew..."
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	# Installing stuff
+	brew install neovim
+	brew install aichat
+else
+	echo "Homebrew installation aborted."
+fi
 
 if [ "$OSTYPE" = "linux-gnu" ]; then
 	sudo apt-get install wget snmp snmpd snmp-mibs-downloader fail2ban cmatrix unzip libfuse2 ninja-build gettext cmake zsh xclip
