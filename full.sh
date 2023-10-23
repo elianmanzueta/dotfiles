@@ -1,6 +1,6 @@
 CONFIG_DIR="$HOME/dotfiles"
 ZSHRC="$CONFIG_DIR/.zsh/.zshrc"
-ZSH_THEME="$CONFIG_DIR/.zsh/themes"
+ZSH_THEME="$CONFIG_DIR/.zsh/.p10k.zsh"
 BASHRC="$CONFID_DIR/.bashrc"
 NVIM="$HOME/.config/nvim"
 
@@ -29,6 +29,7 @@ git clone https://github.com/elianmanzueta/nvim $NVIM
 echo "\nConfiguring symlinks..."
 ln -fs $ZSHRC $HOME/.zshrc
 ln -fs $BASHRC $HOME/.bashrc
+ln -fs $ZSH_THEME $HOME/.p10k.zsh
 
 # Configure gitconfig
 echo "\nConfiguring gitconfig..."
