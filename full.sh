@@ -36,7 +36,7 @@ git config --global user.email "eliandmanzueta@gmail.com"
 git config --global color.ui auto
 
 # Prompt user for confirmation
-read -p "Install Homebrew? (y\n) "
+read -p "Install Homebrew? (y\n) " confirmation
 
 if [[ "$confirmation" == [yY]* ]]; then
 	# Install Homebrew
@@ -45,17 +45,19 @@ if [[ "$confirmation" == [yY]* ]]; then
 	# Installing stuff
 	brew install neovim
 	brew install aichat
+	if [ "$OSTYPE" = "darwin"* ]; then
+		brew install zsh
+		brew install curl
+		brew install xclip
+		brew install tmux
+	fi
 else
 	echo "Homebrew installation aborted."
 fi
 
 if [ "$OSTYPE" = "linux-gnu" ]; then
 	sudo apt-get install wget snmp snmpd snmp-mibs-downloader fail2ban cmatrix unzip libfuse2 ninja-build gettext cmake zsh xclip
-elif [ "$OSTYPE" = "darwin"* ]; then
-	brew install zsh
-	brew install curl
-	brew install xclip
-	brew install tmux
+
 fi
 
 # Add ZSH to /etc/shells
@@ -63,3 +65,5 @@ echo "\nAdding ZSH to allowed shells..."
 command -v zsh | sudo tee -a /etc/shells
 
 echo "Run chsh to change shell to ZSH"
+
+echo "Complete."
