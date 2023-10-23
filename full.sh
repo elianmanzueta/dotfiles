@@ -13,8 +13,8 @@ fi
 # Install Oh My Zsh!
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Create symbolic link for Headline Oh My Zsh! Theme
-ln -s $ZSH_THEME/headline.zsh-theme ~/.oh-my-zsh/custom/themes/headline.zsh-theme
+# Install P10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 # Instll ZSH Plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions             # Autosuggestions
