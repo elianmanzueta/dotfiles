@@ -2,7 +2,7 @@ CONFIG_DIR="$HOME/dotfiles"
 ZSHRC="$CONFIG_DIR/.zsh/.zshrc"
 ZSH_THEME="$CONFIG_DIR/.zsh/themes"
 BASHRC="$CONFID_DIR/.bashrc"
-NVIM="$HOME/.config/nvim"
+NEOVIM="$HOME/.config/nvim"
 
 if [ "$OSTYPE" = "linux-gnu" ]; then
 	sudo apt-get update
@@ -23,7 +23,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 # Clone neovim repo
 echo "\nCloning neovim repository..."
 mkdir $HOME/.config/nvim
-git clone https://github.com/elianmanzueta/nvim $NVIM
+git clone https://github.com/elianmanzueta/nvim $NEOVIM
 
 # Configure symlinks
 echo "\nConfiguring symlinks..."
@@ -65,6 +65,6 @@ fi
 echo "\nAdding ZSH to allowed shells..."
 command -v zsh | sudo tee -a /etc/shells
 
-echo "Run chsh to change shell to ZSH"
+echo "Run chsh to change shell to ZSH."
 
 echo "Complete."

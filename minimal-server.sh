@@ -8,6 +8,7 @@ VIMRC="$CONFIG_DIR/.vimrc"
 
 # Pregame
 sudo apt-get update
+sudo apt-get upgrade -y
 sudo apt-get install curl zsh fail2ban wget
 
 # Security stuff
