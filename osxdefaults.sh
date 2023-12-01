@@ -40,14 +40,8 @@ defaults write com.apple.dock "autohide-time-modifier" -float "0.0"
 # Set autohide delay
 defaults write com.apple.dock "autohide-delay" -float "0"
 
-# Don't show recents in dock
-defaults write com.apple.dock "show-recents" -bool "true"
-
 # Set window minimize/maximize animation
 defaults write com.apple.dock "mineffect" -string "suck"
-
-# Disable spring loading for dock items
-defaults write com.apple.dock "enable-spring-load-actions-on-all-items" -bool "false"
 
 ###############################################################################
 # Mac App Store                                                               #
@@ -89,17 +83,7 @@ defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
 # Disable system startup audio.
 sudo nvram SystemAudioVolume=" "
 
-# Reveal IP address, hostname, OS version, etc. when clicking the clock
-# in the login window
-sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
-
-# Disable Notification Center and remove the menu bar icon
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist 2>/dev/null
-
-# Disable automatic capitalization as it’s annoying when typing code
-defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
-
-# Increase sound quality for bluetooth devices````
+# Increase sound quality for bluetooth devices
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 # Disable hibernation

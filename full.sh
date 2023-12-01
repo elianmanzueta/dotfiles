@@ -2,6 +2,7 @@ CONFIG_DIR="$HOME/dotfiles"
 ZSHRC="$CONFIG_DIR/.zsh/.zshrc"
 ZSH_THEME="$CONFIG_DIR/.zsh/themes"
 BASHRC="$CONFIG_DIR/.bashrc"
+P10K="$CONFIG_DIR/.zsh/.p10k.zsh"
 NEOVIM="$HOME/.config/nvim"
 
 if [ "$OSTYPE" = "linux-gnu" ]; then
@@ -39,6 +40,7 @@ fi
 echo "\nConfiguring symlinks..."
 ln -fs $ZSHRC $HOME/.zshrc
 ln -fs $BASHRC $HOME/.bashrc
+ln -fs $P10K $HOME/.p10k.zsh
 
 # Configure gitconfig
 echo "\nConfiguring gitconfig..."
