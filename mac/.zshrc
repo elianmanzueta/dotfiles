@@ -109,16 +109,17 @@ export LANG=en_US.UTF-8
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-
-# Aliases
+#
+# Example aliases
 alias zshconfig="cd ~/.zshrc"
 alias ohmyzsh="cd ~/.oh-my-zsh"
 alias ls='ls -lhaF --color=auto'
 alias sl='ls -lhaF --color=auto'
 alias vim='nvim'
 
-# Homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export PATH=$PATH:/opt/homebrew/bin
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$GOPATH/bin
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

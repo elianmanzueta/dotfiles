@@ -18,7 +18,7 @@ sudo ufw allow ssh
 sudo ufw enable
 sudo echo "DisableForwarding yes" >>/etc/ssh/sshd_config.d/10-my-sshd-settings.conf
 
-# Configure symlinks
+# Symlinks
 echo "\nConfiguring symlinks..."
 ln -fs $BASHRC $HOME/.bashrc
 ln -fs $VIMRC $HOME/.vimrc
