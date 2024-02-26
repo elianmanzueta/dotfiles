@@ -1,15 +1,12 @@
 #!/bin/bash
 
-# Set debugging
-set -x
-
 DIR=$PWD
 
 # Install Oh My Zsh!
 if [ ! -d $HOME/.oh-my-zsh/ ]; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 else
-	echo "Oh My Zsh! Detected - Skipping installation"
+	echo "Oh My Zsh! detected - Skipping installation"
 fi
 
 # Install Oh My Zsh! Plugins
@@ -25,3 +22,27 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 echo "Configuring symlinks"
 ln -fs $DIR/.zshrc $HOME/.zshrc
 ln -fs $DIR/.p10k.zsh $HOME/.p10k.zsh
+ln -fs $DIR/.gitconfig $HOME/.gitconfig
+
+# Load new variables
+zsh ~/.zshrc
+
+# Install Homebrew
+if [ ! -d /opt/homebrew ]; then
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+else
+	echo "Homebrew detected - Skipping installation"
+fi
+
+# Install brew packages
+read -p "Install Homebrew packages? [y/n]: " response
+
+if [[ $response =~ [Yy]$ ]]; then
+	brew install gh
+	brew install neovim
+	brew install tree
+else
+	echo "Skipping package installation"
+fi
+
+echo "Complete"

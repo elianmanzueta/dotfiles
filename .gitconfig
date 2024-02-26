@@ -1,0 +1,16 @@
+[user]
+  name = Elian Manzueta
+  email = eliandmanzueta@gmail.com
+[color]
+  ui = auto
+[core]
+  editor = code --wait
+  whitespace = -trailing-space
+[diff]
+  mnemonicPrefix = true
+  renames = true
+  tool = vscode
+[push]
+  default = upstream
+[pull]
+  rebase = merges
