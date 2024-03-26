@@ -23,6 +23,7 @@ echo "Configuring symlinks"
 ln -fs $DIR/.zshrc $HOME/.zshrc
 ln -fs $DIR/.p10k.zsh $HOME/.p10k.zsh
 ln -fs $DIR/.gitconfig $HOME/.gitconfig
+ln -fs $DIR/.tmux.conf $HOME/.tmux.conf
 
 # Load new variables
 zsh ~/.zshrc
@@ -41,6 +42,9 @@ if [[ $response =~ [Yy]$ ]]; then
 	brew install gh
 	brew install neovim
 	brew install tree
+	brew install ripgrep
+	brew install lazygit
+	brew install tmux
 else
 	echo "Skipping package installation"
 fi

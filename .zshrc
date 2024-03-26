@@ -80,7 +80,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
   git
   aliases
-  vi-mode
   macos
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -114,6 +113,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls='ls -lhaF --color=auto'
+alias nvimconfig='nvim ~/.config/nvim'
+alias obsidian='cd /Users/elian/Documents/Obsidian\ Vault'
 
 # PATH
 export PATH=$PATH:/opt/homebrew/bin
