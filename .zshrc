@@ -112,9 +112,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Aliases
 alias ls='ls -lhaF --color=auto'
 alias nvimconfig='nvim ~/.config/nvim'
 alias obsidian='cd /Users/elian/Documents/Obsidian\ Vault'
+
+# nvim
+export EDITOR=nvim
 
 # PATH
 export PATH=$PATH:/opt/homebrew/bin
