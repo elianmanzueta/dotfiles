@@ -116,6 +116,7 @@ source $ZSH/oh-my-zsh.sh
 # Aliases
 alias ls='ls -lhaF --color=auto'
 alias nvimconfig='nvim ~/.config/nvim'
+alias nvimdir='cd ~/.config/nvim'
 alias obsidian='cd /Users/elian/Documents/Obsidian\ Vault'
 
 # nvim
