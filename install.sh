@@ -45,8 +45,13 @@ if [[ $response =~ [Yy]$ ]]; then
 	brew install ripgrep
 	brew install lazygit
 	brew install tmux
+  brew install pyenv
+  brew install pyenv-virtualenv
 else
 	echo "Skipping package installation"
 fi
+
+# Install pyenv pyright
+git clone https://github.com/alefpereira/pyenv-pyright.git $(pyenv root)/plugins/pyenv-pyright
 
 echo "Complete"
