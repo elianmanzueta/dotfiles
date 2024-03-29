@@ -123,7 +123,14 @@ alias obsidian='cd /Users/elian/Documents/Obsidian\ Vault'
 export EDITOR=nvim
 
 # PATH
-export PATH=$PATH:/opt/homebrew/bin
+
+# Check if running in WSL
+if [ -f "/proc/sys/fs/binfmt_misc/WSLInterop" ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+else
+  export PATH=$PATH:/opt/homebrew/bin
+fi
+
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 
