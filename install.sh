@@ -2,8 +2,11 @@
 
 DIR=$PWD
 
-sudo apt-get install zsh 
-sudo apt-get install build-essential
+if [ "$(uname -s)" = "Linux" ]; then
+	sudo apt-get install zsh build-essential
+fi
+
+sudo apt-get install zsh build-essential
 
 # Install Oh My Zsh!
 if [ ! -d $HOME/.oh-my-zsh/ ]; then
@@ -48,8 +51,8 @@ if [[ $response =~ [Yy]$ ]]; then
 	brew install ripgrep
 	brew install lazygit
 	brew install tmux
-  brew install pyenv
-  brew install pyenv-virtualenv
+	brew install pyenv
+	brew install pyenv-virtualenv
 else
 	echo "Skipping package installation"
 fi
