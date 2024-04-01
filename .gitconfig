@@ -11,7 +11,7 @@
   renames = true
   tool = vscode
 [push]
-  default = upstream
+	autoSetupRemote = True
 [pull]
   rebase = merges
 [filter "lfs"]

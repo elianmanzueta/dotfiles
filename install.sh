@@ -2,6 +2,9 @@
 
 DIR=$PWD
 
+sudo apt-get install zsh 
+sudo apt-get install build-essential
+
 # Install Oh My Zsh!
 if [ ! -d $HOME/.oh-my-zsh/ ]; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
