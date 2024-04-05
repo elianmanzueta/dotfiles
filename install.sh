@@ -2,11 +2,11 @@
 
 # Variables
 DIR=$PWD
-OS = $(uname -s)
+OS=$(uname -s)
 
 # Install packages
-if [ "$(uname -s)" = "Linux" ]; then
-	sudo apt-get install curl zsh build-essential git
+if [ "$OS" = "Linux" ]; then
+	sudo apt-get install curl zsh git
 fi
 
 # Install Oh My Zsh!
