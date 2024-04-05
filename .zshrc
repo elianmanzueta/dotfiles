@@ -87,52 +87,29 @@ plugins=(
   )
 source $ZSH/oh-my-zsh.sh
 
+# ------------------
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# Variables
+OS=$(uname -s)
 
 # Aliases
 alias ls='ls -lhaF --color=auto'
 alias nvimconfig='nvim ~/.config/nvim'
 alias nvimdir='cd ~/.config/nvim'
-alias obsidian='cd /Users/elian/Documents/Obsidian\ Vault'
+alias obsidian='cd /Users/elian/Documents/Obsidian Vault'
 
-# nvim
+# Editor
 export EDITOR=nvim
 
 # PATH
-
-# Check if running in WSL
-if [ -f "/proc/sys/fs/binfmt_misc/WSLInterop" ]; then
+if [ "$OS" = "Linux" ]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-else
+elif [ "$OS" = "Darwin" ]; then
   export PATH=$PATH:/opt/homebrew/bin
+  export PATH=$PATH:/usr/local/go/bin
+  export PATH=$PATH:$GOPATH/bin
 fi
-
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$GOPATH/bin
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -142,9 +119,11 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # AWS Autocomplete
-autoload bashcompinit && bashcompinit
-autoload -Uz compinit && compinit
-complete -C '/usr/local/bin/aws_completer' aws
+if [ ! -d "/usr/local/bin/aws" ]; then
+  autoload bashcompinit && bashcompinit
+  autoload -Uz compinit && compinit
+  complete -C '/usr/local/bin/aws_completer' aws
+fi
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

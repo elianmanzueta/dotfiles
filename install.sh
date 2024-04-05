@@ -1,12 +1,13 @@
 #!/bin/bash
 
+# Variables
 DIR=$PWD
+OS = $(uname -s)
 
+# Install packages
 if [ "$(uname -s)" = "Linux" ]; then
-	sudo apt-get install zsh build-essential
+	sudo apt-get install curl zsh build-essential git
 fi
-
-sudo apt-get install zsh build-essential
 
 # Install Oh My Zsh!
 if [ ! -d $HOME/.oh-my-zsh/ ]; then
@@ -34,15 +35,19 @@ ln -fs $DIR/.p10k.zsh $HOME/.p10k.zsh
 ln -fs $DIR/.gitconfig $HOME/.gitconfig
 ln -fs $DIR/.tmux.conf $HOME/.tmux.conf
 
-# Load new variables
-zsh ~/.zshrc
-
 # Install Homebrew
 if [ ! -d /opt/homebrew ]; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
 	echo "Homebrew detected - Skipping installation"
 fi
+
+case "$OS" in
+Darwin)
+	export PATH="/opt/homebrew/bin:$PATH"
+	;;
+Linux) ;;
+esac
 
 # Install brew packages
 read -p "Install Homebrew packages? [y/n]: " response
@@ -62,5 +67,10 @@ fi
 
 # Install pyenv pyright
 git clone https://github.com/alefpereira/pyenv-pyright.git $(pyenv root)/plugins/pyenv-pyright
+
+if [ ! -d "$HOME/.config/nvim" ]; then
+	mkdir -p "$HOME/.config/nvim"
+	git clone "https://github.com/elianmanzueta/nvim"
+fi
 
 echo "Complete"
