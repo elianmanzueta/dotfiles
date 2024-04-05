@@ -65,6 +65,9 @@ else
 	echo "Skipping package installation"
 fi
 
+# Install pyenv
+curl https://pyenv.run | bash
+
 # Install pyenv pyright
 git clone https://github.com/alefpereira/pyenv-pyright.git $(pyenv root)/plugins/pyenv-pyright
 
