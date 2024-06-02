@@ -103,13 +103,10 @@ alias obsidian='cd /Users/elian/Documents/Obsidian Vault'
 export EDITOR=nvim
 
 # PATH
-if [ "$OS" = "Linux" ]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-elif [ "$OS" = "Darwin" ]; then
-  export PATH=$PATH:/opt/homebrew/bin
-  export PATH=$PATH:/usr/local/go/bin
-  export PATH=$PATH:$GOPATH/bin
-fi
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export PATH=$PATH:/opt/homebrew/bin
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$GOPATH/bin
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
