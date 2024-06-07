@@ -2,12 +2,6 @@
 
 # Variables
 DIR=$PWD
-OS=$(uname -s)
-
-# Install packages
-if [ "$OS" = "Linux" ]; then
-	sudo apt-get install curl zsh git
-fi
 
 # Install Oh My Zsh!
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -33,15 +27,7 @@ ln -fs $DIR/.tmux.conf $HOME/.tmux.conf
 
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-case "$OS" in
-Darwin)
-	export PATH="/opt/homebrew/bin:$PATH"
-	;;
-Linux)
-  export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-  ;;
-esac
+export PATH="/opt/homebrew/bin:$PATH"
 
 # Install brew packages
 brew install gh

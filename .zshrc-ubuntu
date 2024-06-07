@@ -90,8 +90,6 @@ source $ZSH/oh-my-zsh.sh
 # ------------------
 # User configuration
 
-# Variables
-OS=$(uname -s)
 
 # Aliases
 alias ls='ls -lhaF --color=auto'
@@ -103,7 +101,6 @@ alias obsidian='cd /Users/elian/Documents/Obsidian Vault'
 export EDITOR=nvim
 
 # PATH
-export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 
