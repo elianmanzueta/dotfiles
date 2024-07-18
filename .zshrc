@@ -90,12 +90,6 @@ source $ZSH/oh-my-zsh.sh
 # ------------------
 # User configuration
 
-# Aliases
-alias cd ='zoxide'
-alias cat='bat'
-alias ls='lsd -la --group-directories-first'
-alias obsidian='cd /Users/elian/Documents/obsidian'
-
 # Editor
 export EDITOR=nvim
 
@@ -128,8 +122,10 @@ then
   compinit
 fi
 
-# Zoxide
-eval "$(zoxide init zsh)"
+# Aliases
+alias cat='bat'
+alias ls='lsd -la --group-directories-first'
+alias obsidian='cd /Users/elian/Documents/obsidian'
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -137,3 +133,7 @@ source <(fzf --zsh)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Zoxide
+eval "$(zoxide init zsh)"
+alias cd='z'
