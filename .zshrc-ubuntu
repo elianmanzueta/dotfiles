@@ -93,9 +93,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 alias ls='ls -lhaF --color=auto'
-alias nvimconfig='nvim ~/.config/nvim'
 alias nvimdir='cd ~/.config/nvim'
-alias obsidian='cd /Users/elian/Documents/Obsidian Vault'
+alias obsidian='cd ~/obsidian'
 
 # Editor
 export EDITOR=nvim
@@ -120,7 +119,7 @@ fi
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-

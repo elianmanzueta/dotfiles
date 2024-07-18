@@ -90,14 +90,11 @@ source $ZSH/oh-my-zsh.sh
 # ------------------
 # User configuration
 
-# Variables
-OS=$(uname -s)
-
 # Aliases
-alias ls='ls -lhaF --color=auto'
-alias nvimconfig='nvim ~/.config/nvim'
-alias nvimdir='cd ~/.config/nvim'
-alias obsidian='cd /Users/elian/Documents/Obsidian Vault'
+alias cd ='zoxide'
+alias cat='bat'
+alias ls='lsd -la --group-directories-first'
+alias obsidian='cd /Users/elian/Documents/obsidian'
 
 # Editor
 export EDITOR=nvim
@@ -106,6 +103,7 @@ export EDITOR=nvim
 export PATH=$PATH:/opt/homebrew/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
+export GOPATH=$HOME/go
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -121,9 +119,21 @@ if [ ! -d "/usr/local/bin/aws" ]; then
   complete -C '/usr/local/bin/aws_completer' aws
 fi
 
+# Homebrew Autocomplete
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
+# Zoxide
+eval "$(zoxide init zsh)"
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
