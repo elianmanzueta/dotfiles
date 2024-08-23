@@ -123,8 +123,6 @@ then
 fi
 
 # Aliases
-alias cat='bat'
-alias ls='lsd -la --group-directories-first'
 alias obsidian='cd /Users/elian/Documents/obsidian'
 
 # fzf
@@ -137,3 +135,6 @@ source <(fzf --zsh)
 # Zoxide
 eval "$(zoxide init zsh)"
 alias cd='z'
+
+# Eza
+alias ls='eza -lha --group-directories-first --icons=always'
