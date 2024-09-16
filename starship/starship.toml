@@ -53,11 +53,11 @@ format = "[$duration]($style) "
 style = "yellow"
 
 [rust]
-format = 'with [$symbol($version)]($style)'
+format = 'using [$symbol($version)]($style)'
 
 [python]
-format = '[$symbol($version)]($style)'
+format = 'using [$symbol($version)]($style)'
 pyenv_version_name = true
 
 [golang]
-format = '[$symbol($version)]($style)'
+format = 'using [$symbol($version)]($style)'
