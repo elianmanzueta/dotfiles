@@ -8,12 +8,13 @@ abbr --add ga git add
 abbr --add cr cargo run
 
 # Ls
-abbr --add ls exa -lha --color=auto --icons=always
-abbr --add lt exa --tree
+abbr --add ls eza -lhaF --color=auto --icons=always
+abbr --add lt eza --tree
 
 # Config
 abbr --add fishconfig nvim ~/.config/fish/
 abbr --add starshipconfig nvim ~/.config/starship.toml
+abbr --add nvimconfig nvim ~/.config/nvim
 
 # Zoxide
 abbr --add cd z
