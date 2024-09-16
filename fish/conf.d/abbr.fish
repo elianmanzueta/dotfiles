@@ -9,12 +9,14 @@ abbr --add cr cargo run
 
 # Ls
 abbr --add ls eza -lhaF --color=auto --icons=always
+abbr --add l eza -lhaF --color=auto --icons=always
 abbr --add lt eza --tree
 
 # Config
 abbr --add fishconfig nvim ~/.config/fish/
 abbr --add starshipconfig nvim ~/.config/starship.toml
 abbr --add nvimconfig nvim ~/.config/nvim
+abbr --add obsidian nvim ~/.config
 
 # Zoxide
 abbr --add cd z
