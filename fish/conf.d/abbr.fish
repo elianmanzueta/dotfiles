@@ -16,7 +16,7 @@ abbr --add lt eza --tree
 abbr --add fishconfig nvim ~/.config/fish/
 abbr --add starshipconfig nvim ~/.config/starship.toml
 abbr --add nvimconfig nvim ~/.config/nvim
-abbr --add obsidian nvim ~/.config
+abbr --add obsidian nvim ~/obsidian
 
 # Zoxide
 abbr --add cd z
