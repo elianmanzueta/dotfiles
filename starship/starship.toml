@@ -5,26 +5,30 @@ $directory\
 $git_branch\
 $git_state\
 $git_status\
+$python\
+$rust\
+$go\
 $cmd_duration\
 $line_break\
 $character"""
 
 [username]
 show_always = true
-format = '[$user]($style) in '
-style_user = "green"
+format = "[$user]($style) in "
+style_user = "bold green"
 
 [directory]
-style = "green"
-
+style = "bold green"
 [character]
+
 success_symbol = "[❯](purple)"
 error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
 
 [git_branch]
-format = "on [$branch]($style)"
-style = "white"
+symbol = ' '
+format = "on [$symbol$branch]($style)"
+style = "bold white"
 
 [git_status]
 format = "[[($conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
@@ -47,3 +51,13 @@ style = "bright-black"
 [cmd_duration]
 format = "[$duration]($style) "
 style = "yellow"
+
+[rust]
+format = 'with [$symbol($version)]($style)'
+
+[python]
+format = '[$symbol($version)]($style)'
+pyenv_version_name = true
+
+[golang]
+format = '[$symbol($version)]($style)'
