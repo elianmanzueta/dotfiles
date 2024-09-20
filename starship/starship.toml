@@ -50,7 +50,7 @@ style = "bright-black"
 
 [cmd_duration]
 format = " [$duration]($style) "
-style = "grey"
+style = "white"
 
 [rust]
 format = 'using [$symbol($version)]($style)'
