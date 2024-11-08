@@ -1,6 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export NIX_PROFILES:/Users/elian/\x2enix\x2dprofile
+SETUVAR --export NIX_PROFILES:/nix/var/nix/profiles/default\x20/home/elian/\x2enix\x2dprofile
 SETUVAR --export NIX_SSL_CERT_FILE:/etc/ssl/cert\x2epem
 SETUVAR __done_min_cmd_duration:10000
 SETUVAR __done_notification_urgency_level:low
