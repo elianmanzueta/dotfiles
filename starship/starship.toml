@@ -19,8 +19,8 @@ style_user = "bold green"
 
 [directory]
 style = "bold green"
-[character]
 
+[character]
 success_symbol = "[❯](purple)"
 error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
@@ -58,6 +58,5 @@ format = 'using [$symbol($version)]($style)'
 [python]
 format = 'using [$symbol($version)]($style)'
 
-pyenv_version_name = true
 [golang]
 format = 'using [$symbol($version)]($style)'
